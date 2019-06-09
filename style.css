@@ -2,10 +2,34 @@
     display: grid;
     width: 500px;
     height: 500px;
-    border: 1px solid black;
-    margin: auto;
+    border: 4px solid #ea5c5a;
+    margin: 30px auto;
+    border-radius: 5px;
 }
 
-.grid-item{
+body{
+    font-family: "Karla", sans-serif;
+    text-align: center;
+    background-color: #a0cff8
+}
+
+h1{
+    font-size: 80px;
+    margin: 25px;
+    color: #ea5c5a;
+    text-shadow: 2px 2px white;
+}
+
+.grid-cell{
+    background-color: white;
+}
+
+button{
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+    background-color: #ea5c5a;
     
+    margin: 5px;
+    border-radius: 10px;
 }

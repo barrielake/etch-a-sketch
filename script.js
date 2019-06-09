@@ -4,6 +4,7 @@ function createGrid(number){
     container.setAttribute("style", `grid-template: repeat(${number}, 1fr) / repeat(${number}, 1fr);`)
     for (let i = 0; i < number*number; i++){
         let cell = document.createElement("div");
+        cell.classList.add("grid-cell");
         cell.addEventListener("mouseover", function(e) {
             changeColor(e.target);
         });
@@ -14,7 +15,7 @@ function createGrid(number){
 createGrid(16);
 
 function changeColor(targetCell){
-    targetCell.setAttribute("style", "background-color: black");
+    targetCell.setAttribute("style", "background-color: #ea5c5a");
 }
 
 const resetButton = document.querySelector("#reset-button");
