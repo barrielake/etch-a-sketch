@@ -18,10 +18,16 @@ createGrid(16);
 function changeColor(targetCell){
     switch(colorMode){
         case "default":
-            targetCell.setAttribute("style", "background-color: #ea5c5a");
+            targetCell.setAttribute("style", "background-color: rgba(234, 92, 90, 1)");
             break;
         case "random":
             targetCell.setAttribute("style", `background-color: ${getRandomColor()};`);
+            break;
+        case "shade":
+            let opacity = Number(targetCell.style.opacity);
+                targetCell.style.backgroundColor = "black";
+                targetCell.style.opacity = opacity + 0.1; //add shade  
+            break;
     }
 }
 
@@ -29,7 +35,7 @@ function getRandomColor(){
     let r = getRandomInt(255);
     let g = getRandomInt(255);
     let b = getRandomInt(255);
-    return `rgb(${r}, ${g}, ${b})`;
+    return `rgba(${r}, ${g}, ${b}, 1)`;
 }
 
 function getRandomInt(maxNumber){
@@ -53,3 +59,13 @@ const randomButton = document.querySelector("#random-button");
 randomButton.addEventListener("click", function(){
     colorMode = "random";
 });
+
+const shadeButton = document.querySelector("#shade-button");
+shadeButton.addEventListener("click", function(){
+    colorMode = "shade";
+});
+
+const defaultButton = document.querySelector("#default-button");
+defaultButton.addEventListener("click", function(){
+    colorMode = "default";
+})
